@@ -3,10 +3,22 @@
 {% block title %}Wendy's website{% endblock %}
 {% block headmessage %} <h3>Guten Tag!</h3> {% endblock %}
 {% block content %}
-    
     {% if name %}
     {{ name }}
     {% else %}
     陌生人
     {% endif %}
+    <table class="table table-danger table-striped">
+        <tr><td>編號</td><td>新聞標題</td><td>日期</td></tr>
+    {% for item in news %}
+        <tr>
+            <td>{{ forloop.counter }}<br>
+            <td>
+                 <a href= "show/{{ item.id }}/" >{{ item.title }}</a><br>
+                 <a class="btn btn-sm btn-outline-primary" href="{{ item.url }}">原始出處</a>
+            </td>
+            <td>{{ item.pdate }}</td>
+        </tr>
+    {% endfor %}
+    </table>    
 {% endblock %}
