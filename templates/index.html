@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Wendy's website{% endblock %}
+{% block headmessage %} <h3>Guten Tag!</h3> {% endblock %}
+{% block content %}
+    
+    {% if name %}
+    {{ name }}
+    {% else %}
+    陌生人
+    {% endif %}
+{% endblock %}
